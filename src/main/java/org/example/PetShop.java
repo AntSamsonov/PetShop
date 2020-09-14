@@ -20,13 +20,12 @@ public class PetShop {
         }
     }
 
-    public void sell(Man man, AnimalType pet){
-        Animal choicePet = getAnimal(pet);
-        if (choicePet == dog && man.getMoney() >= dog.getPrice()){
+    public void sell(Man man, Animal pet){
+        if (pet instanceof Dog && man.getMoney() >= dog.getPrice()){
             this.dog = null;
             System.out.println("You bought a cat");
         }
-        if (choicePet == cat && man.getMoney() >= cat.getPrice()){
+        if (pet instanceof Cat && man.getMoney() >= cat.getPrice()){
             this.cat = null;
             System.out.println("You bought a dog");
         } else {
